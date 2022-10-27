@@ -1,4 +1,5 @@
-require('dotenv').config()
+const dotenv = require('dotenv')
+dotenv.config()
 // Require modules
 const express = require('express')
 const methodOverride = require('method-override')
@@ -20,7 +21,7 @@ db.once('open', () => {
 /* Start Middleware */
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
-app.use('/fruits', require('./controllers/routeController'))
+app.use('/shows', require('./controllers/routeController'))
 /* END Middleware */
 
 // Tell the app to listen on a port
