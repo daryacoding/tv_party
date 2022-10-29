@@ -1,27 +1,30 @@
-const dotenv = require('dotenv')
-dotenv.config()
-// Require modules
+/// //////////////////////////////////////////
+// Import Our Dependencies
+/// //////////////////////////////////////////
 const express = require('express')
-const methodOverride = require('method-override')
+const middleware = require('./utils/middleware')
 const db = require('./models/db')
 const app = express()
+db.on('open', () => {
+    console.log('Connected to Mongo')
+})
 
-// Configure the app (app.set)
-/* Start Config */
-app.use(express.urlencoded({ extended: true })) // This code makes us have req.body
-app.use((req, res, next) => {
-    res.locals.data = {}
-    next()
-})
-app.engine('jsx', require('jsx-view-engine').createEngine())
-app.set('view engine', 'jsx') // register the jsx view engine
-db.once('open', () => {
-    console.log('connected to MongoDB Atlas')
-})
-/* Start Middleware */
-app.use(methodOverride('_method'))
-app.use(express.static('public'))
+
+/// //////////////////////////////////////////////////
+// Middleware
+/// //////////////////////////////////////////////////
+middleware(app)
+
+/// /////////////////////////////////////////
+// Routes
+/// /////////////////////////////////////////
 app.use('/shows', require('./controllers/routeController'))
+// send all "/shows" routes to main router (in a more advanced app we could have multiple routers for multiple paths)
+app.use('/user', require('./controllers/authController'))
+// send all "/user" routes to auth router
+app.get('/', (req, res) => {
+    res.render('Home.jsx')
+})
 /* END Middleware */
 
 // Tell the app to listen on a port

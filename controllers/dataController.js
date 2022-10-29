@@ -14,7 +14,7 @@ const dataController = {
         });
     },
     create(req, res, next){
-        req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+        req.body.like = req.body.like === "on" ? true : false;
         // Use Model to create Show Document
         Show.create(req.body, (err, createdShow) => {
             // Once created - respond to client
@@ -41,7 +41,7 @@ const dataController = {
         })
     },
     update(req, res, next){
-        req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+        req.body.like = req.body.like === "on" ? true : false;
         Show.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedShow) => {
         if(err){
             res.status(404).send({

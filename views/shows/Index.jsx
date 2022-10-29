@@ -19,7 +19,7 @@ class Index extends React.Component {
 
                                 <br />
                                 {
-                                            readyToEat
+                                            like
                                             ? 'Liked'
                                             : 'Disliked'
                                         }

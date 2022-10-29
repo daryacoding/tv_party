@@ -3,9 +3,11 @@ const mongoose = require('mongoose')
 // Make a Schema
 const showSchema = new mongoose.Schema({
     name: { type: String, require: true },
+    poster: { type: String, required: true},
     stars: { type: Number, required: true },
     review: { type: String, required: true},
-    like: Boolean
+    like: Boolean,
+    username: String
 })
 
 // Make a Model From The Schema

@@ -11,7 +11,9 @@ class New extends React.Component {
             </nav>
             <form method='POST' action='/shows'>
             Name: <input name='name' placeholder='Name of Show Here' /><br />
+            Poster: <input name='poster' placeholder='Image Link Here' /><br />
             Stars: <input name='stars' placeholder='Number of Stars Here' /><br />
+            Review: <input name='review' placeholder='Enter review' /><br />
             Like: <input type='checkbox' name='like' /><br />
             <input type='submit' value='Submit Show' /><br />
             </form>

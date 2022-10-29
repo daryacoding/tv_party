@@ -11,8 +11,9 @@ class Default extends React.Component {
             </head>
             <body>
             <nav>
-                <a href='/shows'>Go to Home Page For Shows</a>
-                <a href='/shows/new'>Add a New Show</a>
+                <a href='/shows'><button>Go to Home Page For Shows</button></a>
+                <a href='/shows/new'><button>Add a New Show</button></a>
+                {title === 'Login to Account' || title === 'Sign Up For Account' ? '' : <a href="/user/logout"><button>Logout</button></a>}
                 {show ? <a href={`/shows/${show._id}/edit`}> {show.name} Edit Page </a> : ''}
                 {show ? <a href={`/shows/${show._id}`}>{show.name} Show Page</a> : ''}
             </nav>
