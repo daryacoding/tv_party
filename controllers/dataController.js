@@ -2,7 +2,7 @@ const Show = require('../models/show.js');
 
 const dataController = {
     index(req, res, next){
-        Show.find({}, (err, allShows) => {
+        Show.find({ username: req.session.username }, (err, allShows) => {
         if(err){
             res.status(404).send({
             msg: err.message
@@ -15,6 +15,7 @@ const dataController = {
     },
     create(req, res, next){
         req.body.like = req.body.like === "on" ? true : false;
+        req.body.username = req.session.username
         // Use Model to create Show Document
         Show.create(req.body, (err, createdShow) => {
             // Once created - respond to client

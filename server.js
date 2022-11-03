@@ -28,6 +28,5 @@ app.get('/', (req, res) => {
 /* END Middleware */
 
 // Tell the app to listen on a port
-app.listen(3000, () => {
-    console.log('Listening on Port 3000')
-})
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`))

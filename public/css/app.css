@@ -1,14 +1,132 @@
-body {
+@font-face{
+    font-family: cabin;
+    src: url('Cabin-Regular.ttf');
+}
+*{
     margin: 0;
+    padding: 0;
+    font-family: 'Cabin';
+}
+body {
+    background-color: #A9A9A9;
+}
+h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    flex-basis: 33%;
+}
+.topnav{
+    background-color: #767272;
+    display: flex;
+    overflow: hidden;
 }
 
-nav{
+.topnav a{
+    float: right;
+    flex-direction: row-reverse;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.shows{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+img {
+    width: 150px;
+    height: 200px;
+    margin: auto;
+}
+img:hover{
+    color: #767272;
+    opacity: 50%;
+    transform: translateY(4px);
+}
+.title{
+    text-align: center;
+}
+.star-rating{
+    content: '★ ';
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.star {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.star:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.star:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.star:not(:checked) > label:before {
+    content: '★ ';
+}
+.star > input:checked ~ label {
+    color: #ffc700;    
+}
+.star:not(:checked) > label:hover,
+.star:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.star > input:checked + label:hover,
+.star > input:checked + label:hover ~ label,
+.star > input:checked ~ label:hover,
+.star > input:checked ~ label:hover ~ label,
+.star > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.rating{
+    content: '★ ';
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ffc700;
+}
+.starchecked {
+    content: '★ ';
+    color: #ffc700;
+    height: 46px;
+    padding: 0 10px;
 }

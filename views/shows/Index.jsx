@@ -4,34 +4,36 @@ const Default = require('../layouts/Default.jsx')
 class Index extends React.Component {
     render () {
         const { shows } = this.props
+
         return (
         <Default>
-            <h1>Shows Index Page</h1>
-            <ul>
+            <h1>My Shows</h1>
+            <div className='shows'>
             {
                             shows.map((show) => {
-                            const { name, stars, like, _id } = show
+                            const { name, stars, poster, _id } = show
                             return (
-                                <li key={_id}>
+                                <div className='show' key={_id}>
                                 <a href={`/shows/${_id}`}>
-                                    {name}
-                                </a> is {stars} stars
-
-                                <br />
-                                {
-                                            like
-                                            ? 'Liked'
-                                            : 'Disliked'
-                                        }
+                                    <img src={poster}/>
+                                </a> <br />
+                                <div className='title'>{name}</div>
+                                <div className='rating'>
+                                    {[...Array(stars)].map((starchecked) =>{
+                                        return(
+                                            <span className="starchecked" >&#9733;</span>
+                                        );
+                                    })}
+                                </div>
                                 <br />
                                 <form method='POST' action={`/shows/${_id}?_method=DELETE`}>
-                                    <input type='submit' value={`Delete ${name}`} />
+                                    <input type='submit' value='delete' />
                                 </form>
-                                </li>
+                                </div>
                             )
                             })
                         }
-            </ul>
+            </div>
         </Default>
         )
     }
