@@ -1,10 +1,8 @@
 const React = require('react')
 const Default = require('../layouts/Default.jsx')
-
 class Index extends React.Component {
     render () {
         const { shows } = this.props
-
         return (
         <Default>
             <h1>My Shows</h1>
