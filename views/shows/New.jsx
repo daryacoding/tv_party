@@ -22,7 +22,6 @@ class New extends React.Component {
                 <label htmlFor="one">☆</label> <br/>
             </div>
             Review: <input name='review' placeholder='Enter review' /><br />
-            Like: <input type='checkbox' name='like' /><br />
             <input type='submit' value='Submit Show' /><br />
             </form>
         </Default>

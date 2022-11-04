@@ -14,7 +14,6 @@ class Edit extends React.Component {
             Name: <input type='text' name='name' defaultValue={name} /><br />
             <img src={poster}></img><input type='text' name='poster' defaultValue={poster} /><br />
             Stars: <input type='text' name='stars' defaultValue={stars} /><br />
-            Liked: <input type='checkbox' name='like' defaultChecked={like} /> <br />
             <input type='submit' value='Edit Show' />
             </form>
         </Default>
