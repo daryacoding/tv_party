@@ -24,7 +24,7 @@ After clicking log show, the user should fill out all the fields and the added s
 # Restful Routes
 
 | # | Action| URL | HTTP Verb | Mongoose Method |
-| ------------- | ------------- | --- | ---| --- | ---| --- | 
+| ------------- | ------------- | --- | ---| --- | 
 | 1  | Index  | /shows | Get  | Show.find | 
 | 2  | New  | shows/new | Get | Show.create(req.body) |
 | 3  | Delete  | shows/:id | Delete | Show.findByIdAndRemove() | 
