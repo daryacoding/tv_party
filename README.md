@@ -8,11 +8,11 @@ Node JS, Express, MongoDB, React, javascript, html, and css. Used Visual Studio 
 
 # ScreenShots
 
-![alt text] (screenshots/Add.png "New Page")
+![alt text] (https://github.com/daryacoding/tv_party/blob/Main/screenshots/Add.png "Add Page")
 
-![alt text] (screenshots/Index.png "Index Page")
+![alt text] (https://github.com/daryacoding/tv_party/blob/Main/screenshots/Index.png "Index Page")
 
-![alt text] (screenshots/LogIn.png "LogIn Page")
+![alt text] (https://github.com/daryacoding/tv_party/blob/Main/screenshots/LogIn.png "LogIn Page")
 
 # functions used
 String functions used to search the word for the right letters. Canvas functions are used to draw the hangman.
