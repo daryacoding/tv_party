@@ -37,5 +37,7 @@ router.post('/', dataController.create, viewController.redirectHome)
 router.get('/:id/edit', dataController.show, viewController.edit)
 // Show
 router.get('/:id', dataController.show, viewController.show)
+// Comments
+router.put('/:id/comments', dataController.updateComment, viewController.redirectShow) // comment
 // export router
 module.exports = router;

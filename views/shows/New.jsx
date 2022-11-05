@@ -5,7 +5,7 @@ class New extends React.Component {
     render () {
         return (
         <Default>
-            <h1>Create A New Show</h1>
+            <h1>Log Show</h1>
             <form method='POST' action='/shows'>
             Name: <input name='name' placeholder='Name of Show Here' /><br />
             Poster: <input name='poster' placeholder='Image Link Here' /><br />
@@ -21,7 +21,7 @@ class New extends React.Component {
                 <input type='radio' id='one' name='stars' value='1' />
                 <label htmlFor="one">☆</label> <br/>
             </div>
-            Review: <input name='review' placeholder='Enter review' /><br />
+            What did you think? <input id = 'review' name='review' placeholder='Enter review' /><br />
             <input type='submit' value='Submit Show' /><br />
             </form>
         </Default>

@@ -26,7 +26,7 @@ class Index extends React.Component {
                                 <br />
                                 <form method='POST' action={`/shows/${_id}?_method=DELETE`}>
                                     <input type='submit' value='delete' />
-                                </form>
+                                </form> <br/>
                                 </div>
                             )
                             })

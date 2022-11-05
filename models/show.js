@@ -6,6 +6,10 @@ const showSchema = new mongoose.Schema({
     poster: { type: String, required: true},
     stars: { type: Number, required: true },
     review: { type: String, required: true},
+    comments: [{
+        commentName: { type: String, required: true},
+        commentBody: { type: String, required: true}
+    }],
     like: Boolean,
     username: String
 })

@@ -10,8 +10,9 @@ class Default extends React.Component {
             <title>{title}</title>
             </head>
             <div className= 'topnav'>
-                <a href='/shows'>Go to Home Page For Shows</a>
-                <a href='/shows/new'>Add a New Show</a>
+                <a href='/'>Home</a>
+                <a href='/shows'>My Shows</a>
+                <a href='/shows/new'>Log Show</a>
                 {title === 'Login to Account' || title === 'Sign Up For Account' ? '' : <a href="/user/logout">Logout</a>}
                 {show ? <a href={`/shows/${show._id}/edit`}> {show.name} Edit Page </a> : ''}
                 {show ? <a href={`/shows/${show._id}`}>{show.name} Show Page</a> : ''}

@@ -54,6 +54,25 @@ const dataController = {
         }
         });
     },
+    updateComment (req, res, next) {
+        console.log(req.body)
+        Fruit.findById(req.params.id, (err, foundFruit) => {
+            if (err) {
+                res.status(400).send({ msg: err.message })
+            } else {
+                foundFruit.comments.push(req.body)
+        
+                Fruit.findByIdAndUpdate(req.params.id, foundFruit, { new: true }, (err, updatedFruit) => {
+                if (err) {
+                    res.status(400).send({ msg: err.message })
+                } else {
+                    res.locals.data.fruit = updatedFruit
+                    next()
+                }
+                })
+            }
+        })
+    },
     destroy(req, res, next){
         Show.findByIdAndRemove(req.params.id, (err, show) => {
         if(err){
